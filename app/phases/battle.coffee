@@ -1,6 +1,15 @@
 ## Battle Phase
-battle = (attacker, defender) ->
+battle = (first, second) ->
+  # Figure out who will attack first
+  if people.indexOf(first) < people.indexOf(second)
+    attacker = first
+    defender = second
+  else
+    attacker = second
+    defender = first
+    
   console.log '%c BATTLE INITIATE: ' + attacker.name + ' vs ' + defender.name , 'background: #660033; color:#fff'
+
   # Loop through attacks until one of them is dead
   while defender.hp > 0 && attacker.hp > 0
     attacker.attack(defender)

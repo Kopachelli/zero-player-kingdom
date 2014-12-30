@@ -3,20 +3,28 @@
 # Name (string) [required]
 # Stats (object) [required]:
 # DEF : Defense
-# STR : Strenght
+# DEX : Dexterity
 # HP: Hit Points
+# INT: Intelligence
+# STR : Strenght
 class Person
   constructor: (@name, stats) ->
     return console.warn 'People need a name!' if !@name
     return console.warn 'No stats provided!' if !stats
     @def = if typeof(stats.def) != 'undefined' then stats.def else Math.floor((Math.random() * 3) + 1)
-    @str = if typeof(stats.str) != 'undefined' then stats.str else Math.floor((Math.random() * 8) + 2)
+    @dex = if typeof(stats.dex) != 'undefined' then stats.dex else Math.floor((Math.random() * 3) + 1)
     @hp = if typeof(stats.hp) != 'undefined' then stats.hp else Math.floor((Math.random() * 10) + 10)
+    @int = if typeof(stats.int) != 'undefined' then stats.int else Math.floor((Math.random() * 5) + 1)
+    @str = if typeof(stats.str) != 'undefined' then stats.str else Math.floor((Math.random() * 8) + 2)
+    # Add this person to the person list
+    people.push(@)
     # Log it
-    console.group 'CREATED NEW PERSON: ' + @name
+    console.groupCollapsed 'CREATED NEW PERSON: ' + @name
     console.log 'DEF: ' + @def
-    console.log 'STR: ' + @str
+    console.log 'DEX: ' + @dex
     console.log 'HP: ' + @hp
+    console.log 'INT: ' + @int
+    console.log 'STR: ' + @str
     console.groupEnd()
 
   attack: (target) ->
