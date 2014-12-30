@@ -56,6 +56,14 @@ module.exports = function(grunt) {
       },
     },
 
+    coffeelint: {
+      app: [paths.scripts.src],
+      options: {
+        configFile: 'coffeelint.json',
+        force: true
+      }
+    },
+
     // sass: {
     //   options: {
     //     sourceMap: true,
@@ -136,7 +144,7 @@ module.exports = function(grunt) {
       grunt: { files: ['Gruntfile.js'] },
       scripts: {
         files: paths.scripts.src,
-        tasks: ['coffee']
+        tasks: ['coffeelint','coffee']
       },
       // styles: {
       //   files: paths.styles.srcfiles,
@@ -150,6 +158,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-banner');
+  grunt.loadNpmTasks('grunt-coffeelint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-jade');
@@ -158,6 +167,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     // 'clean',
+    'coffeelint',
     'coffee',
     'jade',
     'usebanner:html',
