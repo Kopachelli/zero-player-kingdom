@@ -1,7 +1,7 @@
 {
   "name": "zero-player-kingdom",
   "prettyName": "Zero Player Kingdom",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "a Zero Player RPG",
   "main": "index.html",
   "scripts": {

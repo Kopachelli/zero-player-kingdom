@@ -10,14 +10,17 @@ class Person
     return console.warn 'People need a name!' if !@name
     return console.warn 'No stats provided!' if !stats
     @def = if typeof(stats.def) != 'undefined' then stats.def else Math.floor((Math.random() * 3) + 1)
-    @str = if typeof(stats.str) != 'undefined' then stats.str else Math.floor((Math.random() * 10) + 1)
-    @hp = if typeof(stats.hp) != 'undefined' then stats.hp else Math.floor((Math.random() * 10) + 5)
+    @str = if typeof(stats.str) != 'undefined' then stats.str else Math.floor((Math.random() * 8) + 2)
+    @hp = if typeof(stats.hp) != 'undefined' then stats.hp else Math.floor((Math.random() * 10) + 10)
     # Log it
     console.group 'CREATED NEW PERSON: ' + @name
     console.log 'DEF: ' + @def
     console.log 'STR: ' + @str
     console.log 'HP: ' + @hp
     console.groupEnd()
+
+  attack: (target) ->
+    @punch(target)
 
   punch: (target) ->
     # Calculate the damage by subtracking this person's strength from the target
@@ -26,4 +29,4 @@ class Person
     if dmg < 0 then dmg = 0
     # Subtract the damage from the target's HP
     target.hp -= dmg
-    console.log @name + 'punches ' + target.name + 'for ' + dmg + 'pts of damage!'
+    console.log '%c' + @name + ' punches ' + target.name + ' for ' + dmg + 'pts of damage!' , 'color: #660033 '
