@@ -6,8 +6,8 @@ people = []
 init = () ->
   console.debug 'initializing...'
   # Create units
-  theknight = new Person "The Knight", {}
-  theenemyknight = new Person "The Enemy Knight", {def:1}
+  theknight = new Knight "The Knight", {}
+  theenemyknight = new Knight "The Enemy Knight", {def:1}
   # Set the turn order
   setTurnOrder()
 

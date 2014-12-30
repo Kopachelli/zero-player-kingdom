@@ -51,7 +51,13 @@ module.exports = function(grunt) {
           sourceMap: true,
         },
         files: {
-          'dist/app.js': paths.scripts.src
+          'dist/app.js': [
+            assets_path+'/utilities/**/*.coffee',
+            assets_path+'/phases/**/*.coffee',
+            assets_path+'/classes/person.coffee',
+            assets_path+'/classes/knight.coffee',
+            paths.scripts.src
+          ]
         }
       },
     },
