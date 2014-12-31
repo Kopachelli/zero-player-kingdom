@@ -11,7 +11,8 @@
 class Person
   constructor: (@name, stats) ->
     return console.warn 'People need a name!' if !@name
-    return console.warn 'No stats provided!' if !stats
+    return console.warn 'No stats provided for ' + @name + '!' if !stats
+
     @def = if typeof(stats.def) != 'undefined' then stats.def else Math.floor((Math.random() * 3) + 1)
     @dex = if typeof(stats.dex) != 'undefined' then stats.dex else Math.floor((Math.random() * 3) + 1)
     @hp = if typeof(stats.hp) != 'undefined' then stats.hp else Math.floor((Math.random() * 10) + 10)
@@ -20,11 +21,13 @@ class Person
     @inventory = if typeof(stats.inventory) != 'undefined' then stats.inventory else []
     @attacks = [
       # No attacks by default
-      punch
     ]
     # Add this person to the person list
     people.push(@)
-    # Log it
+    @logConstruction()
+
+  # Log it
+  logConstruction: ->
     console.groupCollapsed 'CREATED NEW PERSON: ' + @name
     console.log 'DEF: ' + @def
     console.log 'DEX: ' + @dex
@@ -34,6 +37,7 @@ class Person
     console.log 'Inventory: '
     console.dir @inventory
     console.groupEnd()
+
 
   hand: ''
 
