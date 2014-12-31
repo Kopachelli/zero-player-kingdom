@@ -18,6 +18,10 @@ class Person
     @int = if typeof(stats.int) != 'undefined' then stats.int else Math.floor((Math.random() * 5) + 1)
     @str = if typeof(stats.str) != 'undefined' then stats.str else Math.floor((Math.random() * 8) + 2)
     @inventory = if typeof(stats.inventory) != 'undefined' then stats.inventory else []
+    @attacks = [
+      # No attacks by default
+      punch
+    ]
     # Add this person to the person list
     people.push(@)
     # Log it
@@ -34,13 +38,17 @@ class Person
   hand: ''
 
   attack: (target) ->
-    @punch(target)
+    attackOptions = @attacks
+    # console.log 'This hand attacks: ' + @hand.attacks
+    if @hand.attacks then attackOptions = attackOptions.concat(@hand.attacks)
 
-  punch: (target) ->
-    # Calculate the damage by subtracking this person's strength from the target
-    dmg = (target.def - @str ) * -1
-    # If the result is less than 0, make it 0
-    if dmg < 0 then dmg = 0
-    # Subtract the damage from the target's HP
-    target.hp -= dmg
-    console.log '%c' + @name + ' punches ' + target.name + ' for ' + dmg + 'pts of damage!' , 'color: #660033 '
+    # Review the attack options for this person
+    # console.debug @name + ' attack options: '
+    # console.dir attackOptions
+
+    # Select a random attack from my attacks and equipment
+    chosenAttack = Math.floor((Math.random() * attackOptions.length))
+    # console.debug 'Using attack ' + chosenAttack
+
+    # Call the attack function
+    attackOptions[chosenAttack](@, target)

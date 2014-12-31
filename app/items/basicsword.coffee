@@ -8,4 +8,4 @@ class BasicSword extends Item
     console.log 'Type: ' + @type
     console.groupEnd()
 
-  attacks: "strike"
+  attacks: [slash]
