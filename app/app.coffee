@@ -8,7 +8,7 @@ init = () ->
   # Create items
   knightsword = new BasicSword "The Knight's Sword", {}
   # Create units
-  theknight = new Knight "The Knight", {inventory:[knightsword] }
+  theknight = new Knight "The Knight", { inventory:[knightsword] }
   theenemyknight = new Knight "The Enemy Knight", {def:1}
   # Set the turn order
   setTurnOrder()

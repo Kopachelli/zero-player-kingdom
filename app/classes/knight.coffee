@@ -3,9 +3,7 @@
 class Knight extends Person
   constructor: (@name, stats) ->
     super
-    @attacks = [
-      punch
-    ]
+    @attacks.push(kick)
 
   # Log it
   logConstruction: ->

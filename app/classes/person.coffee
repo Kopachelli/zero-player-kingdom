@@ -20,7 +20,7 @@ class Person
     @str = if typeof(stats.str) != 'undefined' then stats.str else Math.floor((Math.random() * 8) + 2)
     @inventory = if typeof(stats.inventory) != 'undefined' then stats.inventory else []
     @attacks = [
-      # No attacks by default
+      punch
     ]
     # Add this person to the person list
     people.push(@)
