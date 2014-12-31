@@ -1,0 +1,11 @@
+## An item object
+# Types of items:
+# Weapon
+class Item
+  constructor: (@name, @type, stats) ->
+    return console.warn 'Items need names!' if !@name
+    return console.warn 'No stats provided!' if !stats
+    # Log it
+    console.groupCollapsed 'CREATED NEW ITEM: ' + @name
+    console.log 'Type: ' + @type
+    console.groupEnd()

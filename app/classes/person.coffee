@@ -7,6 +7,7 @@
 # HP: Hit Points
 # INT: Intelligence
 # STR : Strenght
+# Inventory (array) : Array of objects the character holds
 class Person
   constructor: (@name, stats) ->
     return console.warn 'People need a name!' if !@name
@@ -16,6 +17,7 @@ class Person
     @hp = if typeof(stats.hp) != 'undefined' then stats.hp else Math.floor((Math.random() * 10) + 10)
     @int = if typeof(stats.int) != 'undefined' then stats.int else Math.floor((Math.random() * 5) + 1)
     @str = if typeof(stats.str) != 'undefined' then stats.str else Math.floor((Math.random() * 8) + 2)
+    @inventory = if typeof(stats.inventory) != 'undefined' then stats.inventory else []
     # Add this person to the person list
     people.push(@)
     # Log it
@@ -25,7 +27,11 @@ class Person
     console.log 'HP: ' + @hp
     console.log 'INT: ' + @int
     console.log 'STR: ' + @str
+    console.log 'Inventory: '
+    console.dir @inventory
     console.groupEnd()
+
+  hand: ''
 
   attack: (target) ->
     @punch(target)

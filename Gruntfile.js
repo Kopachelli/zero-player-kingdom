@@ -52,10 +52,11 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/app.js': [
+            assets_path+'/app.coffee',
             assets_path+'/utilities/**/*.coffee',
             assets_path+'/phases/**/*.coffee',
             assets_path+'/classes/person.coffee',
-            assets_path+'/classes/knight.coffee',
+            assets_path+'/items/item.coffee',
             paths.scripts.src
           ]
         }
