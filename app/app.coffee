@@ -7,6 +7,7 @@ init = () ->
   console.debug 'initializing...'
   # Create items
   knightsword = new BasicSword "The Knight's Sword", {}
+  knightarmor = new BasicArmor "The Knight's Armor", {}
   # Create units
   theknight = new Knight "The Knight", { inventory:[knightsword] }
   theenemyknight = new Knight "The Enemy Knight", {def:1}
@@ -18,7 +19,6 @@ init = () ->
   console.log 'The Knight has new str: ' + theknight.str
 
   console.groupCollapsed 'Item info:'
-  # console.log 'sword strike: ' + knightsword.attacks
   console.log 'The Knight inventory: '
   console.dir theknight.inventory
   console.group 'The Knight inventory attacks: '
@@ -26,11 +26,10 @@ init = () ->
     console.log i.attacks
   console.groupEnd()
   console.log 'The Knight hand: ' + theknight.hand
-  theknight.hand = knightsword # Equip the knight
-  console.log 'The Knight hand (after equipping): ' + theknight.hand
-  console.dir theknight.hand
-  console.log 'The Knight hand.name (after equipping): ' + theknight.hand.name
-  # console.log 'The Knight sword attacks: ' + theknight.hand.attacks
+  # Equip the knight
+  theknight.hand = knightsword
+  theknight.body = knightarmor
+  console.log 'The Knight equipment: HAND: ' + theknight.hand.name + ' | BODY: ' + theknight.body.name
   console.groupEnd()
 
   # Battle

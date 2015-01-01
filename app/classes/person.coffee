@@ -40,6 +40,7 @@ class Person
 
 
   hand: ''
+  body: ''
 
   attack: (target) ->
     attackOptions = @attacks
