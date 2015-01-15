@@ -26,7 +26,7 @@ class Person
     people.push(@)
     @logConstruction()
 
-  # Log it
+  # Log construction
   logConstruction: ->
     console.groupCollapsed 'CREATED NEW PERSON: ' + @name
     console.log 'DEF: ' + @def
@@ -39,8 +39,9 @@ class Person
     console.groupEnd()
 
 
-  hand: ''
-  body: ''
+  hand: '' #the person's equipable hand slot
+  body: '' #the person's equipable body slot
+  hasItem: false #whether or not this person has an item
 
   attack: (target) ->
     attackOptions = @attacks
@@ -57,3 +58,22 @@ class Person
 
     # Call the attack function
     attackOptions[chosenAttack](@, target)
+
+  useItem: (item) ->
+    console.log @name + ' uses ' + item.name
+    item.use({user:@})
+    @updateItemStatus()
+    console.debug 'that should now be false'
+
+  ## Update the status of this character's items
+  updateItemStatus: ->
+    console.debug 'IN UPDATE STATUS. I should now update the hasItem status'
+    console.log @name + '\'s hasItem: ' + @hasItem
+    if @hasItem
+      console.log @name + '\'s inventory: '
+      console.dir @inventory
+    else
+      console.log @name + ' is itemless...'
+    # Look at my inventory
+    # If there are no items, set my 'hasItem' value to false
+    # possibly .find or .filter
