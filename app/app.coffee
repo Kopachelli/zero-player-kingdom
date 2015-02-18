@@ -18,11 +18,11 @@ init = () ->
   setTurnOrder()
 
   # Mods
-  console.group 'Mods'
-  theknight.hasItem = true
-  theknight.updateItemStatus()
-  theenemyknight.updateItemStatus()
-  theknight.useItem(potion1)
+
+  console.groupCollapsed 'Enemy Knight potion'
+  potion2 = new BasicHealingPotion "Potion 2", {}
+  theenemyknight.addItem(potion2)
+  theenemyknight.useItem(potion2)
   console.groupEnd()
 
   console.groupCollapsed 'The Knight equipment info:'
@@ -40,7 +40,7 @@ init = () ->
   console.groupEnd()
 
   # Items
-  console.group 'Global Items'
+  console.groupCollapsed 'Global Items'
   for i in items
     console.log i.name
 

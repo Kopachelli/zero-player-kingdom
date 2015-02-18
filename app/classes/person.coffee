@@ -22,6 +22,8 @@ class Person
     @attacks = [
       punch
     ]
+    # Update this person's item status
+    @updateItemStatus()
     # Add this person to the person list
     people.push(@)
     @logConstruction()
@@ -35,7 +37,7 @@ class Person
     console.log 'INT: ' + @int
     console.log 'STR: ' + @str
     console.log 'Inventory: '
-    console.dir @inventory
+    console.dir @inventory # Inventory is an array of items that this character has. Items are pushed and spliced from this array to make up the person's inventory
     console.groupEnd()
 
 
@@ -59,21 +61,29 @@ class Person
     # Call the attack function
     attackOptions[chosenAttack](@, target)
 
+  # An item is added to the user's inventory
+  addItem: (item) ->
+    console.log @name + ' gains item: ' + item.name
+    @inventory.push(item)
+    console.dir @inventory
+    @updateItemStatus()
+
+  # This person will use the target item
   useItem: (item) ->
     console.log @name + ' uses ' + item.name
     item.use({user:@})
     @updateItemStatus()
-    console.debug 'that should now be false'
 
   ## Update the status of this character's items
   updateItemStatus: ->
-    console.debug 'IN UPDATE STATUS. I should now update the hasItem status'
-    console.log @name + '\'s hasItem: ' + @hasItem
-    if @hasItem
-      console.log @name + '\'s inventory: '
-      console.dir @inventory
+    console.debug 'Updating item status of ' + @name
+    # console.debug ' hasItem: ' + @hasItem
+    # console.debug ' inventory ' + @inventory
+    # console.dir @inventory
+    if @inventory.length > 0
+      # console.debug @name + ' has inventory.'
+      @hasItem = true
     else
-      console.log @name + ' is itemless...'
-    # Look at my inventory
-    # If there are no items, set my 'hasItem' value to false
-    # possibly .find or .filter
+      # console.debug @name + ' has no inventory.'
+      @hasItem = false
+    # console.debug 'After item status update: hasItem: ' + @hasItem + '. inventory ' + @inventory # for debugging purposes
