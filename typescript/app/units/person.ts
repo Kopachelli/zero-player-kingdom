@@ -35,6 +35,10 @@ class Person implements PersonInterface {
     // Add this person to the global person list
     population.addPerson(this);
     
+    this.constructionMsg();
+  }
+  
+  constructionMsg(){
     zpkMsgBox.innerHTML += '<div>Created new Person: ' + this.name
                         + '<ul>'
                         + '<li>Defense: ' + this.def + '</li>'

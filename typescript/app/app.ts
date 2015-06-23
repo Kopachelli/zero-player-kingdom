@@ -1,7 +1,12 @@
 /// <reference path="attacks/punch.ts" />
+
 /// <reference path="definitions/people.ts" />
+
 /// <reference path="phases/battle.ts" />
+
 /// <reference path="units/person.ts" />
+/// <reference path="units/knight.ts" />
+
 /// <reference path="utilities/sort.ts" />
 
 console.log('ZERO PLAYER KINGDOM');
@@ -14,8 +19,8 @@ function zpk_init() {
   zpkMsgBox.innerHTML += "<p>Initializing...</p>";
   
   // Create the units
-  var theknight:Person = new Person('The Knight');
-  var theenemyknight:Person = new Person('The Enemy Knight');
+  var theknight:Person = new Knight('The Knight');
+  var theenemyknight:Person = new Knight('The Enemy Knight');
   
   // Sort the People List
   population.sortPeople();
