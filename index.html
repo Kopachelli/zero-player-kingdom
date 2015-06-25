@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Zero-player-kingdom by azanebrain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Zero-player-kingdom</h1>
+      <h2 class="project-tagline">a Zero Player RPG</h2>
+      <a href="https://github.com/azanebrain/zero-player-kingdom" class="btn">View on GitHub</a>
+      <a href="https://github.com/azanebrain/zero-player-kingdom/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/azanebrain/zero-player-kingdom/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="zero-player-kingdom" class="anchor" href="#zero-player-kingdom" aria-hidden="true"><span class="octicon octicon-link"></span></a>Zero Player Kingdom</h1>
+
+<p>Zero Player Kingdom started off as a legit stab at a 0-Player RPG but it’s now a playground for me to try out new languages and code concepts. Since there is a very clear roadmap for adding specific functionality, it’s a great platform for learning the unique aspects of a new language or coding style.</p>
+
+<p>In this project you will find a directory for each language which ZPK has been developed in, with another README explaining how to compile and run it. </p>
+
+<p>Official releases can be found in the <a href="https://github.com/azanebrain/zero-player-kingdom/releases">releases page</a>, or you can play (or not play?) <a href="http://azanebrain.github.io/zero-player-kingdom">ZPK online</a>.</p>
+
+<h1>
+<a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Roadmap</h1>
+
+<p>0.1.0: Let’s brawl! (basic combat)</p>
+
+<ul>
+<li>The world will be initialized with 2 units that punch each other to death. </li>
+<li>Initialization : this function (<code>zpk_init()</code>) will initialize the world, units, and start the battle phase
+Attribute: Str (int): Strength of the unit</li>
+<li>New Attribute: Def (int): Defense of the unit</li>
+<li>New Attribute: Hp (int): Hit Points of the unit. When the unit's HP reaches 0, they are dead </li>
+<li>New Attribute: Name (string): Name of the unit</li>
+<li>New Attack: Punch: Attacker deals their strength amount of damage to the defender</li>
+<li>New Class: Person: Basic person unit with these attributes: Str (random number 2-6), def (random number 1-4), hp (random number 15-25), and set attribute: name. All attributes are required. A Person can use the Punch attack.</li>
+<li>New Unit: The Knight: Basic Person. Name: The Knight</li>
+<li>New Unit: The Enemy Knight: Basic Person. Name: The Enemy Knight</li>
+<li>New Phase: Battle: Two units engage in battle with each other, trading turns attacking until one has 0 hp. </li>
+<li>Initiate battle between The Knight vs The Enemy Knight. Each unit trades punches until one dies. The Knight goes first</li>
+</ul>
+
+<p>0.2.0: I go first! </p>
+
+<ul>
+<li>Introduces a turn system during the battle phase by comparing units' dexterity attribute.</li>
+<li>New Attribute: Dex (int): Dexterity of the unit. </li>
+<li>People Class units are constructed with a random dexterity from 5-10 </li>
+<li>New feature: People list : A list of all the people in the world organized by dexterity (highest first). When two units have the same dexterity, order them randomly</li>
+<li>Update Initialization: Generate the people list. This may require that people are added to the list during construction, then sorted.</li>
+<li>New Feature: Turn system in battle phase. Instead of The Knight going first, attack order follows the global people list</li>
+</ul>
+
+<p>0.3.0: Knight fight! &lt;-- Typescript</p>
+
+<ul>
+<li>Adds the Knight Unit Class</li>
+<li>New Class: Knight : Extends Person</li>
+<li>Units: The Knight and the Enemy Knight are now Knight units, instead of person units.</li>
+</ul>
+
+<p>0.4.0: I know kung fu! &lt;-- Coffeescript</p>
+
+<ul>
+<li>Adds multiple attack options for units. Now the two knights will punch and kick each other to death</li>
+<li>Update Person class: People have an attack array</li>
+<li>New Attack: Kick : Deals the attackers strength + 2 damage</li>
+<li>Update Knight class: Knights have the attack Kick in their attack array.</li>
+<li>Now the knight units have two attack options: Punch and Kick</li>
+<li>Update battle phase: The attacking unit randomly selects an attack to perform from their attack array</li>
+</ul>
+
+<p>0.5.0: With this blade! </p>
+
+<ul>
+<li>Adds a sword item to the game.</li>
+<li>New class: Item. Items are objects used and kept by people. </li>
+<li>New item: Basic Sword</li>
+<li>Update Person class: People have an inventory array</li>
+</ul>
+
+<p>0.6.0: Slice!</p>
+
+<ul>
+<li>Items maintain an array of attacks</li>
+<li>Update Item class: Items have an attack array</li>
+<li>New Attack: Slice : Deals the attackers strength + 4 damage</li>
+<li>Add attack 'Slice' to Basic Sword</li>
+</ul>
+
+<p>0.7.0 : Holster that blade!</p>
+
+<ul>
+<li>Units can equip items and gain more attacks from the item.</li>
+<li>Update Person: The Person class gets a method to equip an item. </li>
+<li>Update Item: Items have an equip method that applies some functionality to the unit that has equipped it</li>
+<li>Items with attack arrays add their array with the equipping units'. Do not include duplicates</li>
+<li>Update Initialization: The Knight unit equips a sword before the battle</li>
+</ul>
+
+<p>0.8.0: Drink this potion!</p>
+
+<ul>
+<li>Adds a healing potion to the game</li>
+<li>New Item: Basic Healing Potion : Extends Item. Gives 10hp to the user</li>
+<li>New feature: World item list. when an item is create it is added to the world item list</li>
+<li>Update Item: Add a destruction method which erases the item and removes it from the world item list</li>
+<li>Update item: Add a Use method which applies functionality when the item is used</li>
+<li>Update initialization: The Knight uses the healing potion before the battle</li>
+</ul>
+
+<p>0.9.0: I only have two hands!</p>
+
+<ul>
+<li>Update Person: Add equipment slots: Left hand and Right hand</li>
+<li>Update Item: Items can only be equipped to a list of specific equipment slots. By default, this is an empty list</li>
+<li>Update Basic Sword: This item can only be equipped to the Left or Right hands.</li>
+<li>Update Item: Item's equip method must check that the equipping user has a empty valid equipment slot.</li>
+</ul>
+
+<p>0.10.0: Armor protect me!</p>
+
+<ul>
+<li>Adds armor to the game</li>
+<li>Update Person: Person units have a Body equipment slot</li>
+<li>New Item: Basic Armor: Extends Item. Adds +5 defense to the equipping unit. Can only be equipped to the Body equipment slot</li>
+<li>Update initialization: The Knight equips Basic Armor before the battle</li>
+</ul>
+
+<p>0.x.0: Hold this for a minute!</p>
+
+<ul>
+<li>Adds the ability for units to hold items without equipping them.</li>
+<li>Update Person: Add an inventory array</li>
+<li>Decide how to handle equipped items. Keep them in the inventory list (or object) with an isEquipped property? Make another list?</li>
+<li>Update Initialization: The Knight is given a Basic Healing Potion to hold</li>
+</ul>
+
+<p>0.x.0: Throw it!</p>
+
+<ul>
+<li>New attack option: Use an item (units randomly select to use an item if they have one)</li>
+</ul>
+
+<h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
+
+<p>Contributions are welcome! If you're learning a new language, I suggest forking this project and trying out the roadmap yourself. On the other hand, if I did something wrong, or a project could work better, feel free to <a href="https://github.com/azanebrain/zero-player-kingdom/issues/new">create an issue</a> or <a href="https://github.com/azanebrain/zero-player-kingdom/pulls">submit a pull request</a>. </p>
+
+<h2>
+<a id="commits" class="anchor" href="#commits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commits</h2>
+
+<p>Since there are so many subprojects make sure you define what project the commit focused on, following this format: </p>
+
+<pre><code>PROJECT : Short description
+[Extra line break]
+Long description describing details of the commit, referencing issues and other relevant info
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code>COFFEESCRIPT: Complete Battle Phase
+
+Add Battle Phase which allows two units to fight each other
+See #42
+</code></pre>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>Zero Player Kingdom
+Copyright (C) 2015 AJ Zane</p>
+
+<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/azanebrain/zero-player-kingdom">Zero-player-kingdom</a> is maintained by <a href="https://github.com/azanebrain">azanebrain</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-55599516-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+
