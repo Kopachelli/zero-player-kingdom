@@ -1,4 +1,5 @@
 /// <reference path="attacks/punch.ts" />
+/// <reference path="attacks/kick.ts" />
 
 /// <reference path="definitions/people.ts" />
 
@@ -19,8 +20,13 @@ function zpk_init() {
   zpkMsgBox.innerHTML += "<p>Initializing...</p>";
   
   // Create the units
-  var theknight:Person = new Knight('The Knight');
-  var theenemyknight:Person = new Knight('The Enemy Knight');
+  var theknight:Person = new Knight('The Knight', {});
+  var theenemyknight:Person = new Knight('The Enemy Knight', {
+    str: 3, 
+    def: 3, 
+    dex: 7, 
+    hp: 20
+  });
   
   // Sort the People List
   population.sortPeople();

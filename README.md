@@ -32,13 +32,13 @@ Attribute: Str (int): Strength of the unit
 - Update Initialization: Generate the people list. This may require that people are added to the list during construction, then sorted.
 - New Feature: Turn system in battle phase. Instead of The Knight going first, attack order follows the global people list
 
-0.3.0: Knight fight! <-- Typescript
+0.3.0: Knight fight!
 
 - Adds the Knight Unit Class
 - New Class: Knight : Extends Person
 - Units: The Knight and the Enemy Knight are now Knight units, instead of person units.
 
-0.4.0: I know kung fu! <-- Coffeescript
+0.4.0: I know kung fu! <-- Coffeescript && Typescript
 
 - Adds multiple attack options for units. Now the two knights will punch and kick each other to death
 - Update Person class: People have an attack array

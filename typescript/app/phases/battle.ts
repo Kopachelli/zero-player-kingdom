@@ -4,11 +4,11 @@ var battle = function(attacker: Person, defender: Person) {
   // Start the attack loop
   while ( defender.hp > 0 && attacker.hp > 0 ) {
     // Attacker goes first
-    punch(attacker, defender);
+    attacker.attacks[ Math.floor((Math.random() * attacker.attacks.length)) ](attacker, defender);
     // Check if the defender is still alive
     if ( defender.hp > 0 ) {
       // The defender is still standing so the defender attacks
-      punch(defender, attacker);
+      defender.attacks[ Math.floor((Math.random() * defender.attacks.length)) ](defender, attacker);
     }
   }
   
