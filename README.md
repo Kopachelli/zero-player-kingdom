@@ -38,7 +38,7 @@ Attribute: Str (int): Strength of the unit
 - New Class: Knight : Extends Person
 - Units: The Knight and the Enemy Knight are now Knight units, instead of person units.
 
-0.4.0: I know kung fu! <-- Coffeescript && Typescript
+0.4.0: I know kung fu! <-- Coffeescript
 
 - Adds multiple attack options for units. Now the two knights will punch and kick each other to death
 - Update Person class: People have an attack array
@@ -47,7 +47,7 @@ Attribute: Str (int): Strength of the unit
 - Now the knight units have two attack options: Punch and Kick
 - Update battle phase: The attacking unit randomly selects an attack to perform from their attack array
 
-0.5.0: With this blade! 
+0.5.0: With this blade! <-- Typescript
 
 - Adds a sword item to the game.
 - New class: Item. Items are objects used and kept by people. 

@@ -14,6 +14,7 @@ interface PersonInterface {
   def?: number;
   dex?: number;
   hp: number;
+  inventory: string[];
   name: string;
   params: any;
   str?: number;
@@ -24,6 +25,7 @@ class Person implements PersonInterface {
   def: number;
   dex: number;
   hp: number;
+  inventory: string[];
   name: string;
   params: any;
   str: number;
@@ -38,6 +40,8 @@ class Person implements PersonInterface {
     this.dex = params.dex ? params.dex : Math.floor((Math.random() * 5) + 5);
     // Set the hit points for this person (15-25)
     this.hp = params.hp ? params.hp : Math.floor((Math.random() * 10) + 14);
+    // Setup the person's inventory array
+    this.inventory = params.inventory ? params.inventory : [];
     // Generate the attack array
     this.attacks = params.attacks ? params.attacks : [punch];
     

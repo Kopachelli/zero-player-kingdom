@@ -8,6 +8,9 @@
 /// <reference path="units/person.ts" />
 /// <reference path="units/knight.ts" />
 
+/// <reference path="items/item.ts" />
+/// <reference path="items/basic-sword.ts" />
+
 /// <reference path="utilities/sort.ts" />
 
 console.log('ZERO PLAYER KINGDOM');
@@ -19,9 +22,12 @@ var zpkMsgBox = document.getElementById('zpk-message-box'); // The message box f
 function zpk_init() {
   zpkMsgBox.innerHTML += "<p>Initializing...</p>";
   
+  // Create items
+  var basicsword:BasicSword = new BasicSword('Basic Sword');
+  
   // Create the units
-  var theknight:Person = new Knight('The Knight', {});
-  var theenemyknight:Person = new Knight('The Enemy Knight', {
+  var theknight:Knight = new Knight('The Knight', {});
+  var theenemyknight:Knight = new Knight('The Enemy Knight', {
     str: 3, 
     def: 3, 
     dex: 7, 
