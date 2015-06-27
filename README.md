@@ -54,14 +54,14 @@ Attribute: Str (int): Strength of the unit
 - New item: Basic Sword
 - Update Person class: People have an inventory array
 
-0.6.0: Slice! <-- Typescript
+0.6.0: Slice!
 
 - Items maintain an array of attacks
 - Update Item class: Items have an attack array
 - New Attack: Slice : Deals the attackers strength + 4 damage
 - Add attack 'Slice' to Basic Sword
 
-0.7.0 : Holster that blade!
+0.7.0 : Holster that blade! <-- Typescript
 
 - Units can equip items and gain more attacks from the item.
 - Update Person: The Person class gets a method to equip an item. 

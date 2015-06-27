@@ -17,8 +17,6 @@ class Item implements ItemInterface {
   
   constructor(name:string, params:any) {
     this.name = name;
-    console.log('in item');
-    console.dir(params);
     // Generate the attack array
     this.attacks = params.attacks ? params.attacks : [];
     
@@ -28,5 +26,12 @@ class Item implements ItemInterface {
   constructorMsg() {
     zpkMsgBox.innerHTML += '<div>Created new Item: ' + this.name
                         + '</div>';
+  }
+  
+  /** Functionality to run when this item is equipped
+   * @param person: The person equipping the item
+   */
+  equip(person: Person) {
+    person.attacks = person.attacks.concat(this.attacks); 
   }
 }

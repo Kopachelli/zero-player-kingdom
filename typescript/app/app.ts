@@ -34,6 +34,8 @@ function zpk_init() {
     dex: 7, 
     hp: 20
   });
+  // Equip the units
+  theknight.equip(basicsword);
   
   // Sort the People List
   population.sortPeople();

@@ -10,6 +10,7 @@
 // STR : Strength
 
 interface PersonInterface {
+  // stats
   attacks: any[];
   def?: number;
   dex?: number;
@@ -60,5 +61,13 @@ class Person implements PersonInterface {
                         + '<li>Strength: ' + this.str + '</li>'
                         + '</ul>'
                         + '</div>';
+  }
+  
+  /** Equips an item to this Person
+   * @param item : The item being equipped
+   */
+  equip(item: Item){
+    zpkMsgBox.innerHTML += '<p>' + this.name + ' equips ' + item.name + '</p>';
+    item.equip(this);
   }
 }
