@@ -1,5 +1,6 @@
-/// <reference path="attacks/punch.ts" />
 /// <reference path="attacks/kick.ts" />
+/// <reference path="attacks/punch.ts" />
+/// <reference path="attacks/slice.ts" />
 
 /// <reference path="definitions/people.ts" />
 
@@ -23,7 +24,7 @@ function zpk_init() {
   zpkMsgBox.innerHTML += "<p>Initializing...</p>";
   
   // Create items
-  var basicsword:BasicSword = new BasicSword('Basic Sword');
+  var basicsword:BasicSword = new BasicSword('Basic Sword', {});
   
   // Create the units
   var theknight:Knight = new Knight('The Knight', {});

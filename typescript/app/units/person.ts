@@ -2,7 +2,7 @@
 // Create: var johndoe = new Person("John Doe", {});
 // Create with defined parameters: var janesmith = new Person("Jane Smith", {str:1, def:2});
 // Name (string) [required]
-// Parameters: An object of the units parameters
+// Parameters: An object of the unit's parameters
 // ATTACKS : List of attacks this unit has
 // DEF : Defense
 // DEX : Dexterity

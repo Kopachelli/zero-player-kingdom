@@ -47,14 +47,14 @@ Attribute: Str (int): Strength of the unit
 - Now the knight units have two attack options: Punch and Kick
 - Update battle phase: The attacking unit randomly selects an attack to perform from their attack array
 
-0.5.0: With this blade! <-- Typescript
+0.5.0: With this blade!
 
 - Adds a sword item to the game.
 - New class: Item. Items are objects used and kept by people. 
 - New item: Basic Sword
 - Update Person class: People have an inventory array
 
-0.6.0: Slice!
+0.6.0: Slice! <-- Typescript
 
 - Items maintain an array of attacks
 - Update Item class: Items have an attack array
@@ -112,7 +112,7 @@ Contributions are welcome! If you're learning a new language, I suggest forking 
 Since there are so many subprojects make sure you define what project the commit focused on, following this format: 
 
 ```
-PROJECT : Short description
+PROJECT: Short description
 [Extra line break]
 Long description describing details of the commit, referencing issues and other relevant info
 ```
