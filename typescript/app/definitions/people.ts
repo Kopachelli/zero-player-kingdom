@@ -1,4 +1,4 @@
-// The global population of of Person units and operations related to organizing them
+// The global population of Person units and operations related to organizing them
 
 class People {
   // Ordered list of all Person units

@@ -70,4 +70,11 @@ class Person implements PersonInterface {
     zpkMsgBox.innerHTML += '<p>' + this.name + ' equips ' + item.name + '</p>';
     item.equip(this);
   }
+  
+  /** This person uses an item
+   * @param item : The item being used
+   */
+  use(item: Item){
+    item.use(this);
+  }
 }

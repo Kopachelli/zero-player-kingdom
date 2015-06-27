@@ -20,6 +20,9 @@ class Item implements ItemInterface {
     // Generate the attack array
     this.attacks = params.attacks ? params.attacks : [];
     
+    // Add the item to the global list
+    items.addItem(this);
+    
     this.constructorMsg();
   }
   
@@ -28,10 +31,24 @@ class Item implements ItemInterface {
                         + '</div>';
   }
   
+  /** Destroy this item from the global list and remove it from the game
+   */
+  destroy() {
+    items.destroyItem(this);
+  }
+  
   /** Functionality to run when this item is equipped
    * @param person: The person equipping the item
    */
   equip(person: Person) {
     person.attacks = person.attacks.concat(this.attacks); 
+  }
+  
+  /** Uses this item
+   * @param person: The person using the item
+   */
+  use(person: Person) {
+    zpkMsgBox.innerHTML += '<p>' + person.name + ' uses ' + this.name
+                        + '</p>';
   }
 }

@@ -61,7 +61,7 @@ Attribute: Str (int): Strength of the unit
 - New Attack: Slice : Deals the attackers strength + 4 damage
 - Add attack 'Slice' to Basic Sword
 
-0.7.0 : Holster that blade! <-- Typescript
+0.7.0 : Holster that blade!
 
 - Units can equip items and gain more attacks from the item.
 - Update Person: The Person class gets a method to equip an item. 
@@ -69,11 +69,11 @@ Attribute: Str (int): Strength of the unit
 - Items with attack arrays add their array with the equipping units'. Do not include duplicates
 - Update Initialization: The Knight unit equips a sword before the battle
 
-0.8.0: Drink this potion!
+0.8.0: Drink this potion! <-- Typescript
 
 - Adds a healing potion to the game
-- New Item: Basic Healing Potion : Extends Item. Gives 10hp to the user
-- New feature: World item list. when an item is create it is added to the world item list
+- New Item: Basic Healing Potion : Extends Item. Gives 10hp to the user when used. Destroys itself when used
+- New feature: World item list. when an item is create it is added to the world item list. Likewise, when it is destroyed, it is removed
 - Update Item: Add a destruction method which erases the item and removes it from the world item list
 - Update item: Add a Use method which applies functionality when the item is used
 - Update initialization: The Knight uses the healing potion before the battle
