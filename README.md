@@ -69,7 +69,7 @@ Attribute: Str (int): Strength of the unit
 - Items with attack arrays add their array with the equipping units'. Do not include duplicates
 - Update Initialization: The Knight unit equips a sword before the battle
 
-0.8.0: Drink this potion! <-- Typescript
+0.8.0: Drink this potion!
 
 - Adds a healing potion to the game
 - New Item: Basic Healing Potion : Extends Item. Gives 10hp to the user when used. Destroys itself when used
@@ -78,12 +78,13 @@ Attribute: Str (int): Strength of the unit
 - Update item: Add a Use method which applies functionality when the item is used
 - Update initialization: The Knight uses the healing potion before the battle
 
-0.9.0: I only have two hands!
+0.9.0: I only have two hands! <-- Typescript
 
+- Adds equipment slots to people for equipping items. Equipment slots can only contain one item and items can only be equipped to a specific list of equipment slots
 - Update Person: Add equipment slots: Left hand and Right hand
 - Update Item: Items can only be equipped to a list of specific equipment slots. By default, this is an empty list
-- Update Basic Sword: This item can only be equipped to the Left or Right hands.
-- Update Item: Item's equip method must check that the equipping user has a empty valid equipment slot.
+- Update Basic Sword: This item can only be equipped to the Left or Right hands
+- Update Item: Item's equip method must check that the equipping user has a empty valid equipment slot
 
 0.10.0: Armor protect me!
 

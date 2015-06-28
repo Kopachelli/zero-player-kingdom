@@ -14,6 +14,7 @@ interface PersonInterface {
   attacks: any[];
   def?: number;
   dex?: number;
+  equipmentSlots: any;
   hp: number;
   inventory: string[];
   name: string;
@@ -25,6 +26,7 @@ class Person implements PersonInterface {
   attacks: any[];
   def: number;
   dex: number;
+  equipmentSlots: any;
   hp: number;
   inventory: string[];
   name: string;
@@ -39,6 +41,11 @@ class Person implements PersonInterface {
     this.def = params.def ? params.def : Math.floor((Math.random() * 3) + 1);
     // Set the dexterity attribute (5-10)
     this.dex = params.dex ? params.dex : Math.floor((Math.random() * 5) + 5);
+    // Define this person's equipment slots
+    this.equipmentSlots = params.equipmentSlots ? params.equipmentSlots : {
+      'leftHand': '',
+      'rightHand': '',
+    };
     // Set the hit points for this person (15-25)
     this.hp = params.hp ? params.hp : Math.floor((Math.random() * 10) + 14);
     // Setup the person's inventory array
@@ -67,7 +74,6 @@ class Person implements PersonInterface {
    * @param item : The item being equipped
    */
   equip(item: Item){
-    zpkMsgBox.innerHTML += '<p>' + this.name + ' equips ' + item.name + '</p>';
     item.equip(this);
   }
   
