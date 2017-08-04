@@ -1,0 +1,26 @@
+{
+  "name": "zero-player-kingdom",
+  "version": "0.1.0",
+  "description": "A Node backend implementation of logic for Zero Player Kingdom, a 0-player RPG",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no start specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azanebrain/zero-player-kingdom.git"
+  },
+  "keywords": [],
+  "author": "AJ Zane",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/azanebrain/zero-player-kingdom/issues"
+  },
+  "homepage": "https://github.com/azanebrain/zero-player-kingdom#readme",
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
