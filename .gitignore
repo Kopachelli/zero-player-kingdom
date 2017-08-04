@@ -1,0 +1,19 @@
+# Temporary and log files
+*.swp
+*.swo
+*.log
+.tmp
+
+# The distribution directories
+dist/
+
+# Mac
+.DS_Store
+
+# Node
+node_modules/
+npm_debug.log
+
+# Windows
+Thumbs.db
+*.ini
