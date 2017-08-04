@@ -13,3 +13,13 @@ The version of Node supported by this project is listed in the `engines` section
 # Build
 
 Builds to the `dist/` directory
+
+# Lint
+
+Run the linter with `npm run lint`
+
+Change the lint configuration by editing the `tsconfig.json`
+
+# Packages
+
+* [tslint](https://www.npmjs.com/package/tslint) Used to lint the TypeScript files in this project

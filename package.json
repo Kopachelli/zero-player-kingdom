@@ -4,7 +4,9 @@
   "description": "A Node backend implementation of logic for Zero Player Kingdom, a 0-player RPG",
   "main": "index.js",
   "scripts": {
-    "start": "echo \"Error: no start specified\" && exit 1",
+    "build:live": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts",
+    "lint": "./node_modules/.bin/tslint",
+    "start": "npm run build:live",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,9 @@
     "node": ">=5.0.0"
   },
   "dependencies": {
+    "nodemon": "1.11.0",
+    "ts-node": "3.3.0",
+    "tslint": "5.5.0",
     "typescript": "2.4.2"
   },
   "devDependencies": {}
