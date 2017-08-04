@@ -24,6 +24,7 @@
     "node": ">=5.0.0"
   },
   "dependencies": {
+    "mocha": "3.5.0",
     "nodemon": "1.11.0",
     "ts-node": "3.3.0",
     "tslint": "5.5.0",

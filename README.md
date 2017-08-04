@@ -26,6 +26,7 @@ Change the lint configuration by editing the `tsconfig.json`
 
 # Packages
 
+* [mocha](https://www.npmjs.com/package/mocha) Test framework for JavaScript
 * [nodemon](https://www.npmjs.com/package/nodemon) Watches files and compiles them when saved
 * [tslint](https://www.npmjs.com/package/tslint) Used to lint the TypeScript files in this project
 * [ts-node](https://www.npmjs.com/package/ts-node) TypeScript execution environment and REPL for node.
