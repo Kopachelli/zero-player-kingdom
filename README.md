@@ -9,3 +9,7 @@ This is not really a legit game that runs itself, but more of a fun side project
 Install dependencies with `npm install`
 
 The version of Node supported by this project is listed in the `engines` section of the `package.json` file.
+
+# Build
+
+Builds to the `dist/` directory

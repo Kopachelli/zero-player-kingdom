@@ -21,6 +21,8 @@
   "engines": {
     "node": ">=5.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "typescript": "2.4.2"
+  },
   "devDependencies": {}
 }
