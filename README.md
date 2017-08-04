@@ -10,6 +10,10 @@ Install dependencies with `npm install`
 
 The version of Node supported by this project is listed in the `engines` section of the `package.json` file.
 
+# Develop
+
+Run the app with `npm start`
+
 # Build
 
 Builds to the `dist/` directory
@@ -22,4 +26,6 @@ Change the lint configuration by editing the `tsconfig.json`
 
 # Packages
 
+* [nodemon](https://www.npmjs.com/package/nodemon) Watches files and compiles them when saved
 * [tslint](https://www.npmjs.com/package/tslint) Used to lint the TypeScript files in this project
+* [ts-node](https://www.npmjs.com/package/ts-node) TypeScript execution environment and REPL for node.
