@@ -1,6 +1,6 @@
 ﻿using System;
 using ZPK.Generators;
-using ZPK.Person;
+using ZPK.Phases;
 
 namespace ZPK
 {
@@ -14,6 +14,9 @@ namespace ZPK
 
             var attacker = WarriorGenerator.Generate("Attacker");
             var defender = WarriorGenerator.Generate("Defender");
+
+            var battleResult = new Battle().Initiate(attacker, defender);
+            Console.WriteLine(battleResult);
         }
     }
 }
