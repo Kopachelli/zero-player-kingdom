@@ -15,8 +15,8 @@ namespace ZPK
             var attacker = WarriorGenerator.Generate("Attacker");
             var defender = WarriorGenerator.Generate("Defender");
 
-            var battleResult = new Battle().Initiate(attacker, defender);
-            Console.WriteLine(battleResult);
+            var battleWinner = new Battle().Initiate(attacker, defender);
+            Console.WriteLine($"The {battleWinner.GetType().Name} named '{battleWinner.Name}' wins with {battleWinner.HP} hit points remaining!");
         }
     }
 }

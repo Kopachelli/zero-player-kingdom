@@ -1,4 +1,6 @@
-﻿namespace ZPK.Person
+﻿using ZPK.Attacks;
+
+namespace ZPK.Person
 {
     /// <inheritdoc />
     /// <summary>
@@ -8,7 +10,7 @@
     {
         public Warrior(string name, int hp) : base(name, hp)
         {
+            Attacks.Add(new Punch());
         }
-        
     }
 }
