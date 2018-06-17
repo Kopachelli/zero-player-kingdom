@@ -13,7 +13,8 @@ namespace ZPK.Person
         public List<Attack> Attacks;
         
 
-        public Person(string name, int hp)
+
+        protected Person(string name, int hp)
         {
             Name = name;
             HP = hp;

@@ -4,11 +4,11 @@ using ZPK.Phases;
 
 namespace ZPK
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("ZERO PLAYER KINGDOM:");
             
             var warriorGenerator = new WarriorGenerator();
 
