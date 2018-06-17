@@ -4,7 +4,7 @@ ZPK is a programming excercise that has you learn the intricacies of a new langu
 
 Since there is a very clear roadmap for adding specific functionality, it’s a great platform for learning the unique aspects of a new language or coding style.
 
-In this project you will find an orphan branch for each language which ZPK has been developed in, with another README explaining how to compile and run it. This branch will remain a static reference for the development roadmap.
+In this project you will find separate branches for each language which ZPK has been developed in, with another README explaining how to compile and run it. This branch will remain a static reference for the development roadmap. When you're starting a new project, simply create a new branch off of the `mater` branch named for the language or technique you're learning.
 
 # Roadmap
 
