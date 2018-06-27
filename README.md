@@ -53,13 +53,19 @@ Requirements:
 Let's give these warriors a chance to rebound! 
 
 Requirements:
-* Introduce the concept of Hands to the Person entity
-  * A person has 2 hands
 * Introduce the concept of Items
 * Introduce a Meade item
-  * This item requires 1 free hand
   * This item adds an attack to the holder: Heal
   * When Heal is triggered by Meade, it restores 5 HP
+
+## My hands are full!
+
+Our people need to hold their items
+
+Requirements:
+* Introduce the concept of Hands to the Person entity
+  * A person has 2 hands
+* The Meade item requires 1 free hand
 * When the warrior combatants are created, randomly assign items until neither warrior can hold any more things
   * Each item that introduces an attack should reflect that attack in the warrior's attack list. For example: If a warrior has two bottles of Meade, they should have 2 Heal attacks
 
