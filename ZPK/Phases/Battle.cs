@@ -14,19 +14,18 @@ namespace ZPK.Phases
         /// <param name="attacker"></param>
         /// <param name="defender"></param>
         /// <returns></returns>
-        public Person.Person Initiate(Person.Person attacker, Person.Person defender)
+        public Person Initiate(Person attacker, Person defender)
         {
             Console.WriteLine($"{attacker.Name} ({attacker.HP}) vs {defender.Name} ({defender.HP})");
             var random = new Random();
 
             while (attacker.HP > 0 && defender.HP > 0)
             {
-                
                 // Attacker turn
-                var attackIndex = random.Next(attacker.Attacks.Count);
-                var attack = attacker.Attacks.ElementAt(attackIndex);
-                var damage = attack.damage;
-                defender.HP -= damage;
+                var attacks = attacker.GetAttacks();
+                var attackIndex = random.Next(attacks.Count());
+                var attack = attacks.ElementAt(attackIndex);
+                var damage = attack.Execute(attacker, defender);
                 LogAttack(attacker.Name, attack.GetType().Name, damage);
 
                 // Defender has been defeated
@@ -36,10 +35,10 @@ namespace ZPK.Phases
                 }
                 
                 // Defender turn
-                attackIndex = random.Next(defender.Attacks.Count);
-                attack = defender.Attacks.ElementAt(attackIndex);
-                damage = attack.damage;
-                attacker.HP -= damage;
+                attacks = defender.GetAttacks();
+                attackIndex = random.Next(attacks.Count());
+                attack = attacks.ElementAt(attackIndex);
+                damage = attack.Execute(defender, attacker);
                 LogAttack(defender.Name, attack.GetType().Name, damage);
             }
 
@@ -54,8 +53,10 @@ namespace ZPK.Phases
         /// <param name="damage"></param>
         private void LogAttack(string contender, string attack, int damage)
         {
-            Console.WriteLine($"{contender} uses {attack} and deals {damage} points of damage");
-
+            // Change the damage type message based on the attack type
+            var damageType = damage > 0 ? "deals" : "heals";
+                
+            Console.WriteLine($"{contender} uses {attack} and {damageType} {Math.Abs(damage)} points of damage");
         }
     }
 }

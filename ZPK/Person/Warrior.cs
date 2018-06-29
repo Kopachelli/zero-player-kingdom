@@ -1,6 +1,6 @@
 ﻿using ZPK.Attacks;
 
-namespace ZPK.Person
+namespace ZPK
 {
     /// <inheritdoc />
     /// <summary>
@@ -13,5 +13,6 @@ namespace ZPK.Person
             Attacks.Add(new Punch());
             Attacks.Add(new Kick());
         }
+        
     }
 }
