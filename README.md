@@ -56,7 +56,7 @@ Requirements:
 * Introduce the concept of Items
 * Introduce a Meade item
   * This item adds an attack to the holder: Heal
-  * When Heal is triggered by Meade, it restores 5 HP
+  * When Heal is triggered by Meade, it restores 2 HP
 
 ## My hands are full!
 
