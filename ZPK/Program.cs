@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ZPK.Generators;
 using ZPK.Phases;
 
@@ -15,8 +16,10 @@ namespace ZPK
             var attacker = WarriorGenerator.Generate("Attacker");
             var defender = WarriorGenerator.Generate("Defender");
             
-            // Equipment phase
-            attacker.Equip(new Meade());
+            // Equipment Phase
+            var equipPhase = new Equip();
+            equipPhase.Initiate(attacker);
+            equipPhase.Initiate(defender, new List<Item> { new Meade() });
             
             // Battle phase
             var battleWinner = new Battle().Initiate(attacker, defender);

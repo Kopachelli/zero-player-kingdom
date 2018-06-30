@@ -16,6 +16,7 @@ namespace ZPK.Phases
         /// <returns></returns>
         public Person Initiate(Person attacker, Person defender)
         {
+            Console.WriteLine($"Initiating Battle...");
             Console.WriteLine($"{attacker.Name} ({attacker.HP}) vs {defender.Name} ({defender.HP})");
             var random = new Random();
 
