@@ -35,14 +35,18 @@ namespace ZPK.Phases
             }
             
             // Equip items until the person cannot hold any more items
-            while (person.CanEquip())
+            while (items.Any() && person.CanEquip())
             {
-                var item = items.ElementAt(new Random().Next(items.Count()));
+                var itemIndex = new Random().Next(items.Count());
+                var item = items.ElementAt(itemIndex);
                 var personName = person.Name;
                 var itemName = item.GetType().Name;
                 try
                 {
                     person.Equip(item);
+                    var itemsList = items.ToList();
+                    itemsList.RemoveAt(itemIndex);
+                    items = itemsList;
                     LogSuccessfulEquip(personName, itemName);
                 }
                 catch (ArgumentNullException ex)
