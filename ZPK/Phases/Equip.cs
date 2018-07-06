@@ -16,6 +16,7 @@ namespace ZPK.Phases
             // Generate a default list of all items
             Items = new List<Item>
             {
+                new Meade(),
                 new Meade()
             };
         }

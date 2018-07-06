@@ -66,19 +66,26 @@ namespace ZPK
             {
                 if (hand.IsEquipped) continue;
                 hand.HoldItem(item);
-                // Add the item's attacks to this person
-                foreach (var attack in item.GetAttacks())
-                {
-                    Attacks.Add(attack);
-                }
-
+                
                 break;
             }
         }
         
+        /// <summary>
+        /// Combines the person's attacks, and all of their held item's attacks
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Attack> GetAttacks()
         {
-            return Attacks;
+            // Start with the person's attacks
+            var attacks = Attacks.ToList();
+            // Add each hand's attacks
+            attacks.AddRange(Hands.TakeWhile(hand => hand.IsEquipped)
+                .Select(hand => hand.GetItem())
+                .TakeWhile(handItem => handItem != null)
+                .SelectMany(handItem => handItem.GetAttacks()));
+
+            return attacks;
         }
     }
 

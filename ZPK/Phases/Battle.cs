@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using ZPK.Attacks;
 
 namespace ZPK.Phases
 {
@@ -18,16 +20,15 @@ namespace ZPK.Phases
         {
             Console.WriteLine($"Initiating Battle...");
             Console.WriteLine($"{attacker.Name} ({attacker.HP}) vs {defender.Name} ({defender.HP})");
-            var random = new Random();
 
             while (attacker.HP > 0 && defender.HP > 0)
             {
                 // Attacker turn
                 var attacks = attacker.GetAttacks();
-                var attackIndex = random.Next(attacks.Count());
-                var attack = attacks.ElementAt(attackIndex);
-                var damage = attack.Execute(attacker, defender);
-                LogAttack(attacker.Name, attack.GetType().Name, damage);
+                if (attacks != null)
+                {
+                    attack(attacker, defender, attacks);
+                }
 
                 // Defender has been defeated
                 if (defender.HP < 1)
@@ -37,13 +38,28 @@ namespace ZPK.Phases
                 
                 // Defender turn
                 attacks = defender.GetAttacks();
-                attackIndex = random.Next(attacks.Count());
-                attack = attacks.ElementAt(attackIndex);
-                damage = attack.Execute(defender, attacker);
-                LogAttack(defender.Name, attack.GetType().Name, damage);
+                if (attacks != null)
+                {
+                    attack(defender, attacker, attacks);
+                }
             }
 
             return attacker.HP > 0 ? attacker : defender;
+        }
+
+        /// <summary>
+        /// Chooses one of the attacker's attacks at random and executes it
+        /// </summary>
+        /// <param name="attacker">The entity attacking</param>
+        /// <param name="defender">The entity being attacked</param>
+        /// <param name="attacks">The list of attacks to choose from</param>
+        private void attack(Person attacker, Person defender, IEnumerable<Attack> attacks)
+        {
+            var random = new Random();
+            var attackIndex = random.Next(attacks.Count());
+            var attack = attacks.ElementAt(attackIndex);
+            var damage = attack.Execute(attacker, defender);
+            LogAttack(attacker.Name, attack.GetType().Name, damage);
         }
 
         /// <summary>
