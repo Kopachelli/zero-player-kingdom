@@ -8,9 +8,9 @@ namespace ZPK
     /// </summary>
     public class Meade : Item
     {
-        public IEnumerable<Attack> GetAttacks()
+        public Meade()
         {
-            return new List<Attack>
+            attacks =  new List<Attack>
             {
                 new Heal(2)
             };

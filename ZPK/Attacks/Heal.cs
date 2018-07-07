@@ -9,6 +9,7 @@
         public Heal(int healAmount)
         {
             damage = healAmount * -1;
+            ammunition = 1;
         }
         
         /// <summary>
