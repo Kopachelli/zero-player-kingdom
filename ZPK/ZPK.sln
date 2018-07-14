@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZPK", "ZPK.csproj", "{74BE931D-B383-4DA5-9D60-ADA6E5F7B443}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{6EF38B8C-6A66-46D7-B1E5-35C4AF52617D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{74BE931D-B383-4DA5-9D60-ADA6E5F7B443}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74BE931D-B383-4DA5-9D60-ADA6E5F7B443}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74BE931D-B383-4DA5-9D60-ADA6E5F7B443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF38B8C-6A66-46D7-B1E5-35C4AF52617D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF38B8C-6A66-46D7-B1E5-35C4AF52617D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF38B8C-6A66-46D7-B1E5-35C4AF52617D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF38B8C-6A66-46D7-B1E5-35C4AF52617D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
